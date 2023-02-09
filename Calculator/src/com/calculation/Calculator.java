@@ -1,78 +1,73 @@
 package com.calculation;
 import com.addition.Addition;
 import com.subtraction.Subtraction;
-import com.multiplication.Multiplication;
 import com.division.Division;
-
+import com.multiplication.Multiplication;
 
 
 import java.util.Scanner;
 
-public class Calculator {
+public class Calculator 
+    {
 
-	public static void main(String[] args) 
+	public static void main (String[] args)
 	{
-		int choice = 0;
+		int choice =0;
 		Scanner input = new Scanner(System.in);
-		float n1, n2;
+		float n1,n2;
 		
-		System.out.print("\nWelcome to Calculator Project!");
-		
+		System.out.println("\nWelcome to Caluclator project!");
 		try
 		{
-			while(choice != 5 )
+			while(choice !=5)
 			{
-				System.out.print("\n1 - Addition");
-				System.out.print("2 - Substraction");
-				System.out.print("3 - Multiplication");
-				System.out.print("4 - Division");
-				System.out.print("5 - Exit");
-				System.out.print("\n Enter your Choice");
+				System.out.println("\n1 - Addition");
+				System.out.println("\n2 - Subtraction");
+				System.out.println("\n3 - Multiplication");
+				System.out.println("\n4 - Division");
+				System.out.println("\n5 - Exit");
+				System.out.println("\nEnter Your Choice");
 				choice = input.nextInt();
 				
-				if(choice == 5)
+				if (choice ==5)
 				{
-					
-						System.out.print("\nThanks for using");
-					    System.exit(0);
+					System.out.println("\n Thanks For Using");
+					System.exit(0);
 				}
+				if(choice > 0 && choice <6 ) {
+				System.out.println("\nEnter First value");
+				n1= input.nextFloat();
 				
-				System.out.print("\nEnter First value");
-				n1 = input.nextFloat();
-				
-				System.out.print("\nEnter Second value");
-				n2 = input.nextFloat();
-				
-				if(choice == 1)
-				{
-					System.out.print("Sum: " + Addition.addition(n1, n2));
-				}
-				
-				else if(choice == 2)
-				{
-				
-				System.out.print("Substraction: " + Subtraction.subtraction(n1,n2));
+				System.out.println("\nEnter Second value");
+				n2= input.nextFloat();
 			
-			    }
+			if (choice == 1)
+			{
+				System.out.println("Sum " +Addition.addition(n1,n2));
 				
-				else if(choice == 3)
-				{
-					System.out.print("Multiplication: " + Multiplication.Multiplication(n1,n2));
-				}
-				else if(choice == 4)
-				{
-					System.out.print("Division: " + Division.division(n1,n2));
-				}
-			}	
+			}
+			else if (choice == 2)
+			{
+				System.out.println("Subtraction " +Subtraction.subtraction(n1,n2));
+			}
+			else if (choice == 3)
+			{
+				System.out.println("Multiplication " +Multiplication.Multiplication(n1,n2));
+			}
+			else if (choice == 4)
+			{
+				System.out.println("Division " +Division.division(n1,n2));
+			}
+			}
+			else
+			{
+				System.out.println("\n Please select the Available Choice");
+			}
 		}
-		catch(Exception ex)
-		{
-			
-				System.out.println("\nError: " + ex.toString() + "Occured");
-				
-					
-			
-		}
-
 	}
+	catch (Exception ex)
+	{
+		System.out.println("\nError: "+ ex.toString() + "Occured");
+	}
+}
 }
